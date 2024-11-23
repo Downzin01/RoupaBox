@@ -14,7 +14,7 @@ namespace RoupaBox.Features.Menu
     {
         List<CadastroCliente> listaClientes = new List<CadastroCliente>();
 
-        public CadastroCliente registrar()
+        public CadastroCliente Registrar()
         {
             CabecalhoCadastroCliente cabecalhoCadastro = new CabecalhoCadastroCliente();
             ValidadorCPF validadorCPF = new ValidadorCPF();
