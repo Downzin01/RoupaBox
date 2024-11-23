@@ -1,19 +1,17 @@
 ﻿using RoupaBox.Features.Menu;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RoupaBox.UI.Menus
 {
     internal class MenuPrincipal
     {
-        public void ExibirMenu(RegistarProduto produto)
+        public void ExibirMenu(RegistarProduto produto, RegistrarCliente cliente)
         {
             while (true)
             {
                 List<RegistarProduto> listaProduto = new List<RegistarProduto>();
+                List<RegistrarCliente> listaCliente = new List<RegistrarCliente>();
 
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("» Digite 0 para sair");
@@ -31,13 +29,12 @@ namespace RoupaBox.UI.Menus
                 {
                     case 1:
                         Console.Clear();
-                        CadastroCliente cadastroCliente = new CadastroCliente();
-                        cadastroCliente.Cadastro();
+                        cliente.Registrar();
 
                         break;
                     case 2:
                         Console.Clear();
-
+                        cliente.ExibirListaClientes();
                         break;
                     case 3:
                         Console.Clear();
@@ -46,14 +43,7 @@ namespace RoupaBox.UI.Menus
                         break;
                     case 4:
                         Console.Clear();
-
-                        break;
-                    case 5:
-                        Console.Clear();
-
-                        break;
-                    case 6:
-                        Console.Clear();
+                        produto.ExibirListaProdutos();
 
                         break;
                     case 0:

@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RoupaBox.Features.Cadastro
+﻿namespace RoupaBox.Features.Cadastro
 {
     internal class CadastroCliente
     {
-        public CadastroCliente(string cliente)
+        public CadastroCliente(long cliente)
         {
             CPFcliente = cliente;
         }
-        public string CPFcliente { get; set; }
+        public long CPFcliente { get; set; }
         public string NomeCliente { get; set; }
         public string TelefoneCliente { get; set; }
         public int IdadeCliente { get; set; }
