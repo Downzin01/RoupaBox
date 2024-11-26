@@ -1,6 +1,8 @@
 ﻿using RoupaBox.Features.Menu;
+using RoupaBox.UI.Layout;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace RoupaBox.UI.Menus
 {
@@ -13,12 +15,15 @@ namespace RoupaBox.UI.Menus
                 List<RegistarProduto> listaProduto = new List<RegistarProduto>();
                 List<RegistrarCliente> listaCliente = new List<RegistrarCliente>();
 
+                Cabecalho cabecalho= new Cabecalho();
+
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("» Digite 0 para sair");
                 Console.WriteLine("» Digite 1 para Cadastro de Clientes");
                 Console.WriteLine("» Digite 2 para Listar Clientes");
                 Console.WriteLine("» Digite 3 para Cadastro de Produtos");
-                Console.WriteLine("» Digite 4 para Listar Produto\n");
+                Console.WriteLine("» Digite 4 para Listar Produto");
+                Console.WriteLine("» Digite 5 para Listar API");
 
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("\n» Digite a opção escolhida:");
@@ -44,6 +49,11 @@ namespace RoupaBox.UI.Menus
                     case 4:
                         Console.Clear();
                         produto.ExibirListaProdutos();
+                        break; 
+                    case 5:
+                        Console.Clear();
+                        API varAPI = new API();
+                        varAPI.main();
 
                         break;
                     case 0:
@@ -52,7 +62,10 @@ namespace RoupaBox.UI.Menus
                         break;
                     default:
                         Console.WriteLine("\nOpção inválida. Tente novamente.");
-                        // ExibirMenu();
+                        Thread.Sleep(2000);
+
+                        cabecalho.Principal();
+                        this.ExibirMenu(produto, cliente);
                         break;
                 }
             }
